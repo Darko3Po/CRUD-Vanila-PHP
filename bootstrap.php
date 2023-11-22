@@ -1,8 +1,5 @@
 <?php 	
 
-	
-	//Svuda gdje je ukljucen bootstrap sada imamo i sesiju
-	session_start();
 
 	//Pozovi podatke iz config.php fajla
 	$config = require 'config.php';
