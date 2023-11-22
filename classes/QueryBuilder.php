@@ -16,6 +16,21 @@
 			$query->execute();
 			return $query->fetchAll(PDO::FETCH_ASSOC);
 		}
+
+		public function save($data)
+		{
+			$sql = "INSERT INTO accounts VALUES(NULL,?,?,?)";
+			$query = $this->db->prepare($sql);
+			$query->execute([$data->name,$data->deposit,$data->credit_card]);
+
+			if ($query) {
+				return "success";
+			}else {
+				return "error";
+			}
+		}
+
+
 	}
 
  ?>
